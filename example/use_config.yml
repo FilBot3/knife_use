@@ -1,0 +1,5 @@
+---
+corp_cert :
+  location : C:/Users/PD028300/.chefdk/corp-cert/knife.rb
+corp_prod : 
+  location : C:/Users/PD028300/.chefdk/corp-prod/knife.rb

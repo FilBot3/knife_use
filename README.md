@@ -1,8 +1,6 @@
-# KnifeUse
+# Knife Use
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/knife_use`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+This is a knife plugin to allow a user to have multiple knife.rb files and use it similar to RVM, or PIK. 
 
 ## Installation
 
@@ -22,7 +20,12 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Create a standard knife.rb in your $HOME/.chef directory. Inside that knife.rb, place the following line, as it is required:  
+```
+Chef::Config.from_file("/home/user/.chef/knife.rb")
+```
+There must be an existing file there in order for Chef to utilize this plugin.   
+Inside the $HOME/.chef directory, add the use_config.yml from the gem's example directory, and add the locations of the custom knife.rb files. The way this plugin works, it allows the $HOME/.chef/knife.rb to have global defaults, as it only changes the Chef::Config.from_file line. 
 
 ## Development
 
@@ -32,8 +35,11 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-1. Fork it ( https://github.com/[my-github-username]/knife_use/fork )
+1. Fork it ( https://github.com/predatorian3/knife_use/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create a new Pull Request
+
+
+I realize that this can be easily solved by having multiple chef-repo directories with the custom knife.rb files.
